@@ -1,5 +1,5 @@
 /***************************************
- *   Filenameï¼š SequenceList.cpp       *
+ *   Filename£º SequenceList.cpp       *
  *                                     *
  *   StudentID: 1618*****              *
  *                                     *
@@ -12,8 +12,8 @@
 
 using namespace std;
 
-const int LIST_INIT_SIZE = 256;	//é¡ºåºè¡¨åˆå§‹å®¹é‡
-const int LIST_INCREMENT = 256;	//é¡ºåºè¡¨å¢åŠ å®¹é‡
+const int LIST_INIT_SIZE = 256;	//Ë³Ğò±í³õÊ¼ÈİÁ¿
+const int LIST_INCREMENT = 256;	//Ë³Ğò±íÔö¼ÓÈİÁ¿
 const int OK = 1;
 const int ERROR = 0;
 const int YES = 1;
@@ -28,25 +28,25 @@ typedef struct
 	int size;
 }SeqList;
 
-//åˆå§‹åŒ–ã€é”€æ¯ã€æ¸…ç©ºæ“ä½œ
+//³õÊ¼»¯¡¢Ïú»Ù¡¢Çå¿Õ²Ù×÷
 Status InitList(SeqList* List)
 {
-	List->pElem = NULL;	//åˆ†é…å†…å­˜ä¹‹å‰å¿…é¡»å°†æŒ‡é’ˆè®¾ç½®ä¸ºNULLï¼Œå¦åˆ™ä¸ºé‡æŒ‡é’ˆï¼Œåç»­æ— æ³•åˆ¤æ–­å†…å­˜æ˜¯å¦åˆ†é…æˆåŠŸã€‚
+	List->pElem = NULL;	//·ÖÅäÄÚ´æÖ®Ç°±ØĞë½«Ö¸ÕëÉèÖÃÎªNULL£¬·ñÔòÎªÒ°Ö¸Õë£¬ºóĞøÎŞ·¨ÅĞ¶ÏÄÚ´æÊÇ·ñ·ÖÅä³É¹¦¡£
 	List->pElem = (ElemType*)malloc(LIST_INIT_SIZE * sizeof(ElemType));
-	//æ£€éªŒåˆ†é…å†…å­˜æ˜¯å¦æˆåŠŸ
+	//¼ìÑé·ÖÅäÄÚ´æÊÇ·ñ³É¹¦
 	if (NULL == List->pElem)
 	{
 		cout << "Allocating failed";
 		exit(OVERFLOW);
 	}
-	for (int i = 0; i < LIST_INIT_SIZE; i++)	//åˆ†é…å†…å­˜æˆåŠŸï¼Œé¡ºåºè¡¨å†…å®¹åˆå§‹åŒ–
+	for (int i = 0; i < LIST_INIT_SIZE; i++)	//·ÖÅäÄÚ´æ³É¹¦£¬Ë³Ğò±íÄÚÈİ³õÊ¼»¯
 	{
 		List->pElem[i] = -1;
 	}
 	List->length = 0;
 	List->size = LIST_INIT_SIZE;
 
-	//è¯»å–æ•°æ®
+	//¶ÁÈ¡Êı¾İ
 	ifstream inFile("SeqquenceList.txt");
 	if (!inFile)
 	{
@@ -67,7 +67,7 @@ Status DestoryList(SeqList* List)
 	if (NULL == List->pElem)
 	{
 		free(List->pElem);
-		List->pElem = NULL;	//é‡Šæ”¾å†…å­˜ä¹‹åå¿…é¡»å°†æŒ‡é’ˆè®¾ç½®ä¸ºNULLï¼Œå¦åˆ™æˆä¸ºé‡æŒ‡é’ˆã€‚
+		List->pElem = NULL;	//ÊÍ·ÅÄÚ´æÖ®ºó±ØĞë½«Ö¸ÕëÉèÖÃÎªNULL£¬·ñÔò³ÉÎªÒ°Ö¸Õë¡£
 	}
 	List->size = 0;
 	List->length = 0;
@@ -84,7 +84,7 @@ Status ClearList(SeqList* List)
 	return OK;
 }
 
-//è®¿é—®å‹æ“ä½œ
+//·ÃÎÊĞÍ²Ù×÷
 Status ListEmpty(SeqList* List)
 {
 	return 0 == List->length ? YES : NO;
@@ -103,7 +103,7 @@ Status GetElem(SeqList* List, int logicalPos, ElemType* targetElem)
 	}
 	else
 	{
-		*targetElem = List->pElem[logicalPos - 1];	//targetElem=...æ— æ•ˆï¼
+		*targetElem = List->pElem[logicalPos - 1];	//targetElem=...ÎŞĞ§£¡
 		return OK;
 	}
 }
@@ -113,17 +113,17 @@ int LocateElem(SeqList* List, ElemType elem)
 	for (int i = 0; i < List->length; i++)
 	{
 		if (elem == List->pElem[i])
-			return i + 1;	//è¿”å›å€¼ä¸ºlogicalPosï¼Œè€ŒéphycalPos
+			return i + 1;	//·µ»ØÖµÎªlogicalPos£¬¶ø·ÇphycalPos
 	}
-	return 0;	//è¿”å›å€¼å¯ä»¥ä¸ºé›¶ï¼Œå› ä¸ºè¿”å›å€¼ä¸ºlogicalPosï¼Œé€»è¾‘0ä»£è¡¨å…ƒç´ ä¸å­˜åœ¨
+	return 0;	//·µ»ØÖµ¿ÉÒÔÎªÁã£¬ÒòÎª·µ»ØÖµÎªlogicalPos£¬Âß¼­0´ú±íÔªËØ²»´æÔÚ
 }
 
 Status PriorElem(SeqList* List, ElemType curElem, ElemType* priorElem)
 {
 	int posCurElem = LocateElem(List, curElem);	//logicalPos of curElem
-	if (posCurElem > 1 && posCurElem < List->length + 1)	//curEleméå¤´å…ƒç´ 
+	if (posCurElem > 1 && posCurElem < List->length + 1)	//curElem·ÇÍ·ÔªËØ
 	{
-		*priorElem = List->pElem[posCurElem - 2];	//targetElem=...æ— æ•ˆï¼
+		*priorElem = List->pElem[posCurElem - 2];	//targetElem=...ÎŞĞ§£¡
 		return OK;
 	}
 	return ERROR;
@@ -132,9 +132,9 @@ Status PriorElem(SeqList* List, ElemType curElem, ElemType* priorElem)
 Status NextElem(SeqList* List, ElemType curElem, ElemType* nextElem)
 {
 	int posCurElem = LocateElem(List, curElem);	//logicalPos of curElem
-	if (posCurElem > 0 && posCurElem < List->length)	//curEleméå°¾å…ƒç´ 
+	if (posCurElem > 0 && posCurElem < List->length)	//curElem·ÇÎ²ÔªËØ
 	{
-		*nextElem = List->pElem[posCurElem];	//targetElem=...æ— æ•ˆï¼
+		*nextElem = List->pElem[posCurElem];	//targetElem=...ÎŞĞ§£¡
 		return OK;
 	}
 	return ERROR;
@@ -154,7 +154,7 @@ Status ListTraverse(SeqList* List)
 	return ERROR;
 }
 
-//åŠ å·¥å‹æ“ä½œ
+//¼Ó¹¤ĞÍ²Ù×÷
 Status SetElem(SeqList* List, int logicalPos, ElemType* elem)
 {
 	if (logicalPos > 0 && logicalPos < List->length + 1)
@@ -173,22 +173,22 @@ Status SetElem(SeqList* List, int logicalPos, ElemType* elem)
 
 Status InsertElem(SeqList* List, int logicalPos, ElemType elem)
 {
-	//åˆæ³•æ€§æ£€éªŒ
+	//ºÏ·¨ĞÔ¼ìÑé
 	if (logicalPos > 0 && logicalPos < List->length + 1)
 	{
-		//å­˜å‚¨ç©ºé—´å¤§å°æ£€éªŒ
+		//´æ´¢¿Õ¼ä´óĞ¡¼ìÑé
 		if (List->length >= List->size)
 		{
 			List->pElem = (ElemType*)realloc(List->pElem, (List->size + LIST_INCREMENT) * sizeof(ElemType));
-			if (NULL == List->pElem)	//æ£€æŸ¥å†…å­˜åˆ†é…æ˜¯å¦æˆåŠŸ
+			if (NULL == List->pElem)	//¼ì²éÄÚ´æ·ÖÅäÊÇ·ñ³É¹¦
 			{
 				cout << "Reallocating failed";
 				exit(OVERFLOW);
 			}
 			List->size = List->size + LIST_INCREMENT;
 		}
-		ElemType* q = &List->pElem[logicalPos - 1];	//qä¸ºæ’å…¥ä½ç½®
-		for (ElemType* p = &List->pElem[List->length - 1]; p >= q; p--)	//pä¸ºç§»åŠ¨æŒ‡é’ˆ
+		ElemType* q = &List->pElem[logicalPos - 1];	//qÎª²åÈëÎ»ÖÃ
+		for (ElemType* p = &List->pElem[List->length - 1]; p >= q; p--)	//pÎªÒÆ¶¯Ö¸Õë
 		{
 			*(p + 1) = *p;
 		}
@@ -203,9 +203,9 @@ Status DeleteElem(SeqList* List, int logicalPos, ElemType* elem)
 {
 	if (logicalPos > 0 && logicalPos < List->length + 1)
 	{
-		ElemType* q = &List->pElem[logicalPos - 1];	//qä¸ºåˆ é™¤ä½ç½®
+		ElemType* q = &List->pElem[logicalPos - 1];	//qÎªÉ¾³ıÎ»ÖÃ
 		*elem = *q;
-		for (ElemType* p = q; p <= &List->pElem[List->length - 2]; p++)	//pä¸ºç§»åŠ¨æŒ‡é’ˆ
+		for (ElemType* p = q; p <= &List->pElem[List->length - 2]; p++)	//pÎªÒÆ¶¯Ö¸Õë
 		{
 			*p = *(p + 1);
 		}
@@ -215,55 +215,55 @@ Status DeleteElem(SeqList* List, int logicalPos, ElemType* elem)
 	return ERROR;
 }
 
-//ä¸»å‡½æ•°ï¼ˆæµ‹è¯•å‡½æ•°ï¼‰
+//Ö÷º¯Êı£¨²âÊÔº¯Êı£©
 int main()
 {
-	//åœ¨æ ˆåŒºåˆ†é…å†…å­˜ï¼Œä½†ç»“æ„ä½“å†…éƒ¨å˜é‡æœªåˆå§‹åŒ–
+	//ÔÚÕ»Çø·ÖÅäÄÚ´æ£¬µ«½á¹¹ÌåÄÚ²¿±äÁ¿Î´³õÊ¼»¯
 	SeqList List;
 
-	//åˆå§‹åŒ–é¡ºåºè¡¨ï¼š
+	//³õÊ¼»¯Ë³Ğò±í£º
 	InitList(&List);
 
-	ElemType targetElem;	//åˆ›å»ºå®ä½“å˜é‡ï¼Œåœ¨å‡½æ•°ä¸­é€šè¿‡ä¼ åœ°å€è¿›è€Œæ”¹å˜å˜é‡å€¼ã€‚
+	ElemType targetElem;	//´´½¨ÊµÌå±äÁ¿£¬ÔÚº¯ÊıÖĞÍ¨¹ı´«µØÖ·½ø¶ø¸Ä±ä±äÁ¿Öµ¡£
 
 	if (!ListEmpty(&List))
 	{
 		cout << left;
 
-		//éå†é¡ºåºè¡¨ï¼š
+		//±éÀúË³Ğò±í£º
 		cout << setw(50) << "1.List Elements: ";
 		ListTraverse(&List);
 
-		//æ‰“å°é¡ºåºè¡¨é•¿åº¦ï¼š
+		//´òÓ¡Ë³Ğò±í³¤¶È£º
 		cout << setw(50) << "2.List Length: " << ListLength(&List) << endl;
 
-		//æ‰“å°ç¬¬ä¸‰ä¸ªå…ƒç´ ï¼š
+		//´òÓ¡µÚÈı¸öÔªËØ£º
 		if (GetElem(&List, 3, &targetElem))
 			cout << setw(50) << "3.The third one: " << targetElem << endl;
 
-		//æ‰“å°å…ƒç´ 11çš„ä½ç½®:
+		//´òÓ¡ÔªËØ11µÄÎ»ÖÃ:
 		cout << setw(50) << "4.Position of the 11th one: " << LocateElem(&List, 11) << endl;
 
-		//æ‰“å°ä½äº9å‰é¢çš„å…ƒç´ ï¼š
+		//´òÓ¡Î»ÓÚ9Ç°ÃæµÄÔªËØ£º
 		if (PriorElem(&List, 9, &targetElem))
 			cout << setw(50) << "5.Prior Element 9: " << targetElem << endl;
 
-		//æ‰“å°ä½äº18åé¢çš„å…ƒç´ ï¼š
+		//´òÓ¡Î»ÓÚ18ºóÃæµÄÔªËØ£º
 		if (NextElem(&List, 18, &targetElem))
 			cout << setw(50) << "6.Next Element 18: " << targetElem << endl;
 
-		//æ‰“å°ç¬¬ä¸‰ä¸ªå…ƒç´ å¹¶é‡ç½®ä¸ºtargetElemï¼š
+		//´òÓ¡µÚÈı¸öÔªËØ²¢ÖØÖÃÎªtargetElem£º
 		if (SetElem(&List, 3, &targetElem))
 			cout << setw(50) << "7.The 3th one before reseting: " << targetElem << endl;
 
-		//æ’å…¥targetElemåˆ°ç¬¬ä¸‰ä½ä¸Šï¼Œå¹¶æ‰“å°æ–°çš„é¡ºåºè¡¨ï¼š
+		//²åÈëtargetElemµ½µÚÈıÎ»ÉÏ£¬²¢´òÓ¡ĞÂµÄË³Ğò±í£º
 		if (InsertElem(&List, 3, targetElem))
 		{
 			cout << setw(50) << "8.List Elements after inserting: ";
 			ListTraverse(&List);
 		}
 
-		//åˆ é™¤ç¬¬ä¸‰ä¸ªå…ƒç´ åæ‰“å°é¡ºåºè¡¨ï¼š
+		//É¾³ıµÚÈı¸öÔªËØºó´òÓ¡Ë³Ğò±í£º
 		if (DeleteElem(&List, 3, &targetElem))
 		{
 			cout << setw(50) << "9.List Elements after deleting the 3th one: ";
