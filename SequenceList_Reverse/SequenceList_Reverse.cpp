@@ -19,7 +19,7 @@ typedef struct
 
 Status InitList(SeqList* List)
 {
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	List->pElem = NULL;
 	List->pElem = (ElemType*)malloc(LIST_INIT_SIZE * sizeof(ElemType));
 	if (NULL == List->pElem)
@@ -33,7 +33,7 @@ Status InitList(SeqList* List)
 	List->length = 0;
 	List->size = LIST_INIT_SIZE;
 
-	//¶ÁÈ¡Êı¾İ
+	//è¯»å–æ•°æ®
 	ifstream inFile("SeqquenceList.txt");
 	if (!inFile)
 	{
@@ -45,7 +45,7 @@ Status InitList(SeqList* List)
 		inFile >> List->pElem[i++];
 		List->length++;
 	}
-	inFile.close();	//²»ÒªÍü¼Ç¹Ø±ÕÎÄ¼ş
+	inFile.close();	//ä¸è¦å¿˜è®°å…³é—­æ–‡ä»¶
 	return OK;
 }
 Status ListTraverse(SeqList* List)
