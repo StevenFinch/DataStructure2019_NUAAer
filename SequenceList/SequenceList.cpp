@@ -161,11 +161,7 @@ Status SetElem(SeqList* List, int logicalPos, ElemType* elem)
 		*elem = temp;
 		return OK;
 	}
-	else
-	{
-		return ERROR;
-	}
-
+	return ERROR;
 }
 
 Status InsertElem(SeqList* List, int logicalPos, ElemType elem)
