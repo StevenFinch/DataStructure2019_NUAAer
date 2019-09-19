@@ -1,10 +1,10 @@
 /***************************************
- *   Filename£º SequenceList.cpp       *
- *                                     *
- *   StudentID: 1618*****              *
- *                                     *
- *   Name:      Steven                 *
- *                                     *
+ **   Filename£º SequenceList.cpp
+ **                                      
+ **   StudentID: 1618*****              
+ **                                     
+ **   Name:      Steven                 
+ **                                     
  ***************************************/
 #include <iostream>
 #include <iomanip>
