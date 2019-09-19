@@ -1,10 +1,10 @@
 /***************************************
  **   Filename： SequenceList.cpp
- **                                      
- **   StudentID: 1618*****              
- **                                     
- **   Name:      Steven                 
- **                                     
+ **
+ **   StudentID: 1618*****
+ **
+ **   Name:      Steven
+ **
  ***************************************/
 #include <iostream>
 #include <iomanip>
@@ -35,10 +35,7 @@ Status InitList(SeqList* List)
 	List->pElem = (ElemType*)malloc(LIST_INIT_SIZE * sizeof(ElemType));
 	//检验分配内存是否成功
 	if (NULL == List->pElem)
-	{
-		cout << "Allocating failed";
 		exit(OVERFLOW);
-	}
 	for (int i = 0; i < LIST_INIT_SIZE; i++)	//分配内存成功，顺序表内容初始化
 	{
 		List->pElem[i] = -1;
@@ -95,15 +92,15 @@ int ListLength(SeqList* List)
 	return List->length;
 }
 
-Status GetElem(SeqList* List, int logicPos, ElemType* Elem)
+Status GetElem(SeqList* List, int logicalPos, ElemType* targetElem)
 {
-	if (logicPos < 1 || logicPos > List->length)
+	if (logicalPos < 1 || logicalPos > List->length)
 	{
 		return ERROR;
 	}
 	else
 	{
-		*Elem = List->pElem[logicPos - 1];	//Elem=...无效！
+		*targetElem = List->pElem[logicalPos - 1];	//targetElem=...无效！
 		return OK;
 	}
 }
@@ -113,17 +110,17 @@ int LocateElem(SeqList* List, ElemType elem)
 	for (int i = 0; i < List->length; i++)
 	{
 		if (elem == List->pElem[i])
-			return i + 1;	//返回值为logicPos，而非phycalPos
+			return i + 1;	//返回值为logicalPos，而非phycalPos
 	}
-	return 0;	//返回值可以为零，因为返回值为logicPos，逻辑0代表元素不存在
+	return 0;	//返回值可以为零，因为返回值为logicalPos，逻辑0代表元素不存在
 }
 
 Status PriorElem(SeqList* List, ElemType curElem, ElemType* priorElem)
 {
-	int posCurElem = LocateElem(List, curElem);	//logicPos of curElem
+	int posCurElem = LocateElem(List, curElem);	//logicalPos of curElem
 	if (posCurElem > 1 && posCurElem < List->length + 1)	//curElem非头元素
 	{
-		*priorElem = List->pElem[posCurElem - 2];	//Elem=...无效！
+		*priorElem = List->pElem[posCurElem - 2];	//targetElem=...无效！
 		return OK;
 	}
 	return ERROR;
@@ -131,10 +128,10 @@ Status PriorElem(SeqList* List, ElemType curElem, ElemType* priorElem)
 
 Status NextElem(SeqList* List, ElemType curElem, ElemType* nextElem)
 {
-	int posCurElem = LocateElem(List, curElem);	//logicPos of curElem
+	int posCurElem = LocateElem(List, curElem);	//logicalPos of curElem
 	if (posCurElem > 0 && posCurElem < List->length)	//curElem非尾元素
 	{
-		*nextElem = List->pElem[posCurElem];	//Elem=...无效！
+		*nextElem = List->pElem[posCurElem];	//targetElem=...无效！
 		return OK;
 	}
 	return ERROR;
@@ -155,22 +152,26 @@ Status ListTraverse(SeqList* List)
 }
 
 //加工型操作
-Status SetElem(SeqList* List, int logicPos, ElemType* elem)
+Status SetElem(SeqList* List, int logicalPos, ElemType* elem)
 {
-	if (logicPos > 0 && logicPos < List->length + 1)
+	if (logicalPos > 0 && logicalPos < List->length + 1)
 	{
-		ElemType temp = List->pElem[logicPos - 1];
-		List->pElem[logicPos - 1] = *elem;
+		ElemType temp = List->pElem[logicalPos - 1];
+		List->pElem[logicalPos - 1] = *elem;
 		*elem = temp;
 		return OK;
 	}
-	return ERROR;
+	else
+	{
+		return ERROR;
+	}
+
 }
 
-Status InsertElem(SeqList* List, int logicPos, ElemType elem)
+Status InsertElem(SeqList* List, int logicalPos, ElemType elem)
 {
 	//合法性检验
-	if (logicPos > 0 && logicPos < List->length + 1)
+	if (logicalPos > 0 && logicalPos < List->length + 1)
 	{
 		//存储空间大小检验
 		if (List->length >= List->size)
@@ -183,7 +184,7 @@ Status InsertElem(SeqList* List, int logicPos, ElemType elem)
 			}
 			List->size = List->size + LIST_INCREMENT;
 		}
-		ElemType* q = &List->pElem[logicPos - 1];	//q为插入位置
+		ElemType* q = &List->pElem[logicalPos - 1];	//q为插入位置
 		for (ElemType* p = &List->pElem[List->length - 1]; p >= q; p--)	//p为移动指针
 		{
 			*(p + 1) = *p;
@@ -195,11 +196,11 @@ Status InsertElem(SeqList* List, int logicPos, ElemType elem)
 	return ERROR;
 }
 
-Status DeleteElem(SeqList* List, int logicPos, ElemType* elem)
+Status DeleteElem(SeqList* List, int logicalPos, ElemType* elem)
 {
-	if (logicPos > 0 && logicPos < List->length + 1)
+	if (logicalPos > 0 && logicalPos < List->length + 1)
 	{
-		ElemType* q = &List->pElem[logicPos - 1];	//q为删除位置
+		ElemType* q = &List->pElem[logicalPos - 1];	//q为删除位置
 		*elem = *q;
 		for (ElemType* p = q; p <= &List->pElem[List->length - 2]; p++)	//p为移动指针
 		{
@@ -220,7 +221,7 @@ int main()
 	//初始化顺序表：
 	InitList(&List);
 
-	ElemType Elem;	//创建实体变量，在函数中通过传地址进而改变变量值。
+	ElemType targetElem;	//创建实体变量，在函数中通过传地址进而改变变量值。
 
 	if (!ListEmpty(&List))
 	{
@@ -234,33 +235,33 @@ int main()
 		cout << setw(50) << "2.List Length: " << ListLength(&List) << endl;
 
 		//打印第三个元素：
-		if (GetElem(&List, 3, &Elem))
-			cout << setw(50) << "3.The third one: " << Elem << endl;
+		if (GetElem(&List, 3, &targetElem))
+			cout << setw(50) << "3.The third one: " << targetElem << endl;
 
 		//打印元素11的位置:
 		cout << setw(50) << "4.Position of the 11th one: " << LocateElem(&List, 11) << endl;
 
 		//打印位于9前面的元素：
-		if (PriorElem(&List, 9, &Elem))
-			cout << setw(50) << "5.Prior Element 9: " << Elem << endl;
+		if (PriorElem(&List, 9, &targetElem))
+			cout << setw(50) << "5.Prior Element 9: " << targetElem << endl;
 
 		//打印位于18后面的元素：
-		if (NextElem(&List, 18, &Elem))
-			cout << setw(50) << "6.Next Element 18: " << Elem << endl;
+		if (NextElem(&List, 18, &targetElem))
+			cout << setw(50) << "6.Next Element 18: " << targetElem << endl;
 
-		//打印第三个元素并重置为Elem：
-		if (SetElem(&List, 3, &Elem))
-			cout << setw(50) << "7.The 3th one before reseting: " << Elem << endl;
+		//打印第三个元素并重置为targetElem：
+		if (SetElem(&List, 3, &targetElem))
+			cout << setw(50) << "7.The 3th one before reseting: " << targetElem << endl;
 
-		//插入Elem到第三位上，并打印新的顺序表：
-		if (InsertElem(&List, 3, Elem))
+		//插入targetElem到第三位上，并打印新的顺序表：
+		if (InsertElem(&List, 3, targetElem))
 		{
 			cout << setw(50) << "8.List Elements after inserting: ";
 			ListTraverse(&List);
 		}
 
 		//删除第三个元素后打印顺序表：
-		if (DeleteElem(&List, 3, &Elem))
+		if (DeleteElem(&List, 3, &targetElem))
 		{
 			cout << setw(50) << "9.List Elements after deleting the 3th one: ";
 			ListTraverse(&List);
@@ -270,4 +271,3 @@ int main()
 	system("pause");
 	return 0;
 }
-
