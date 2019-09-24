@@ -1,7 +1,7 @@
 /***************************************
  **   Filename£º LinkList.cpp
  **
- **	  Compiler:  Visual Studio 2019
+ **   Compiler:  Visual Studio 2019
  **
  **   StudentID: 1618*****
  **

@@ -1,7 +1,7 @@
 /***************************************
- **   Filename£º Á´±í¾ÍµØÄæÖÃ.cpp
+ **   Filenameï¼š é“¾è¡¨å°±åœ°é€†ç½®.cpp
  **
- **	  Compiler:   Visual Studio 2019
+ **   Compiler:  Visual Studio 2019
  **
  **   StudentID: 1618*****
  **
@@ -34,34 +34,34 @@ typedef struct
 
 Status InitList(SListInfo* List)
 {
-	//¿ª±ÙÍ·½Úµã
+	//å¼€è¾Ÿå¤´èŠ‚ç‚¹
 	List->head = NULL;
 	List->head = (LNode*)malloc(sizeof(SListInfo));
 	if (NULL == List->head)
 		exit(OVERFLOW);
 	List->head->next = NULL;
 
-	//Á¬½Ó
+	//è¿æ¥
 	List->tail = List->head;
 	List->pCurNode = List->head;
 	List->length = 0;
 
 	return OK;
 }
-Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)		//½«elem²åÈëÔÚpCurNodeºó
+Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)		//å°†elemæ’å…¥åœ¨pCurNodeå
 {
-	//ÎªĞÂ½ÚµãÉêÇë¿Õ¼ä
+	//ä¸ºæ–°èŠ‚ç‚¹ç”³è¯·ç©ºé—´
 	LNode* newNode = (LNode*)malloc(sizeof(LNode));
 	if (newNode == NULL)
 		exit(OVERFLOW);
 	newNode->data = *elem;
 	newNode->next = NULL;
 
-	//²åÈëĞÂ½Úµã
+	//æ’å…¥æ–°èŠ‚ç‚¹
 	newNode->next = List->pCurNode->next;
 	List->pCurNode->next = newNode;
 
-	//Èç¹ûÊÇ±íÎ²½Úµã£¬Ôò±íÎ²Ö¸Õë¸üĞÂ
+	//å¦‚æœæ˜¯è¡¨å°¾èŠ‚ç‚¹ï¼Œåˆ™è¡¨å°¾æŒ‡é’ˆæ›´æ–°
 	if (List->pCurNode->next == NULL)
 		List->tail = newNode;
 
@@ -80,17 +80,17 @@ Status ListTraverse(SListInfo* List)
 }
 Status LinkReverse(SListInfo* List)
 {
-	//ĞèÒªÈı¸öÖ¸ÕëÁª¶¯£¬pCur¸ºÔğÇ°½ø£¬pTemp¸ºÔğ¼ÇÂ¼µ±Ç°½Úµã£¬pRev¸ºÔğ¼ÇÂ¼Ç°Ò»¸ö½Úµã
+	//éœ€è¦ä¸‰ä¸ªæŒ‡é’ˆè”åŠ¨ï¼ŒpCurè´Ÿè´£å‰è¿›ï¼ŒpTempè´Ÿè´£è®°å½•å½“å‰èŠ‚ç‚¹ï¼ŒpRevè´Ÿè´£è®°å½•å‰ä¸€ä¸ªèŠ‚ç‚¹
 	
 	LNode* pCur = List->head->next;
 	LNode* pRev = List->head;
 	LNode* pTemp = pCur;
 	while (pCur != NULL)
 	{
-		pTemp = pCur;	//pTemp¹éÎ»
-		pCur = pCur->next;	//pCurÇ°½ø
-		pTemp->next = pRev;	//Á´½Ó
-		pRev = pTemp;	//pRevÇ°½ø
+		pTemp = pCur;	//pTempå½’ä½
+		pCur = pCur->next;	//pCurå‰è¿›
+		pTemp->next = pRev;	//é“¾æ¥
+		pRev = pTemp;	//pRevå‰è¿›
 	}
 	List->head->next->next = NULL;
 	List->tail = List->head->next;
@@ -105,7 +105,7 @@ int main()
 	SListInfo List;
 	if (InitList(&List))
 	{
-		//¶ÁÊı¾İ
+		//è¯»æ•°æ®
 		ifstream inFile("LinkList.txt");
 		if (!inFile)
 			return ERROR;
