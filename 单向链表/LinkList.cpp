@@ -1,5 +1,7 @@
 /***************************************
- **   Filenameï¼š LinkList.cpp
+ **   Filename£º LinkList.cpp
+ **
+ **	  Compiler:   Visual Studio 2019
  **
  **   StudentID: 1618*****
  **
@@ -19,38 +21,30 @@ const int NO = 0;
 
 typedef int ElemType;
 typedef int Status;
-typedef struct LNode 
-{
+typedef struct LNode {
 	ElemType data;
 	struct LNode* next;
 }LNode, * LinkList;
-typedef struct 
-{
+
+typedef struct {
 	LinkList head;
 	LinkList tail;
 	LNode* pCurNode;
 	int length;
 }SListInfo;
 
-//åˆå§‹åŒ–ã€é”€æ¯ã€æ¸…ç©ºæ“ä½œ
+//³õÊ¼»¯¡¢Ïú»Ù¡¢Çå¿Õ²Ù×÷
 Status InitList(SListInfo* List)
 {
-	//å¼€è¾Ÿå¤´èŠ‚ç‚¹
+	//¿ª±ÙÍ·½Úµã
 	List->head = NULL;
 	List->head = (LNode*)malloc(sizeof(SListInfo));
 	if (NULL == List->head)
 		exit(OVERFLOW);
 	List->head->next = NULL;
 
-	//å¼€è¾Ÿå°¾èŠ‚ç‚¹
-	List->tail = NULL;
-	List->tail = (LNode*)malloc(sizeof(SListInfo));
-	if (NULL == List->tail)
-		exit(OVERFLOW);
-	List->tail->next = NULL;
-
-	//è¿æ¥
-	List->head->next = List->tail;
+	//Á¬½Ó
+	List->tail = List->head;
 	List->pCurNode = List->head;
 	List->length = 0;
 
@@ -58,18 +52,17 @@ Status InitList(SListInfo* List)
 }
 Status DestroyList(SListInfo* List)
 {
-	//é‡Šæ”¾æ‰€æœ‰èŠ‚ç‚¹
+	//ÊÍ·ÅËùÓĞ½Úµã
 	LNode* p;
-	while (List->head->next != List->tail)
+	while (List->head->next != NULL)
 	{
 		p = List->head->next;
 		List->head->next = p->next;
 		free(p);
 	}
-	free(List->tail);
 	free(List->head);
 
-	//æŒ‡ç©ºæ‰€æœ‰æŒ‡é’ˆ
+	//Ö¸¿ÕËùÓĞÖ¸Õë
 	List->head = NULL;
 	List->tail = NULL;
 	List->pCurNode = NULL;
@@ -77,19 +70,18 @@ Status DestroyList(SListInfo* List)
 
 	return OK;
 }
-Status ClearList(SListInfo* List)	//ä¸DestroyListç›¸æ¯”ä»…ä»…æ˜¯ä¸é”€æ¯å¤´èŠ‚ç‚¹
+Status ClearList(SListInfo* List)	//ÓëDestroyListÏà±È½ö½öÊÇ²»Ïú»ÙÍ·½Úµã
 {
-	//é‡Šæ”¾æ‰€æœ‰èŠ‚ç‚¹
+	//ÊÍ·Å³ıÍ·½ÚµãËùÓĞ½Úµã
 	LNode* p;
-	while (List->head->next != List->tail)
+	while (List->head->next != NULL)
 	{
 		p = List->head->next;
 		List->head->next = p->next;
 		free(p);
 	}
-	free(List->tail);
 
-	//æŒ‡ç©ºé™¤å¤´æŒ‡é’ˆä»¥å¤–æ‰€æœ‰æŒ‡é’ˆ
+	//Ö¸¿Õ³ıÍ·Ö¸ÕëÒÔÍâËùÓĞÖ¸Õë
 	List->tail = NULL;
 	List->pCurNode = NULL;
 	List->length = 0;
@@ -97,7 +89,7 @@ Status ClearList(SListInfo* List)	//ä¸DestroyListç›¸æ¯”ä»…ä»…æ˜¯ä¸é”€æ¯å¤´èŠ‚
 	return OK;
 }
 
-//è®¿é—®å‹æ“ä½œ
+//·ÃÎÊĞÍ²Ù×÷
 Status ListEmpty(SListInfo* List)
 {
 	if (List->length == 0)
@@ -106,11 +98,11 @@ Status ListEmpty(SListInfo* List)
 }
 Status GetElem(SListInfo* List, int pos, ElemType* elem)
 {
-	if (pos < 1 || pos > List->length)	//åˆæ³•æ€§æ£€éªŒ
+	if (pos < 1 || pos > List->length)	//ºÏ·¨ĞÔ¼ìÑé
 		return ERROR;
-	int j = 1;	//è®¡æ•°å™¨
+	int j = 1;	//¼ÆÊıÆ÷
 	LNode* p = List->head->next;
-	while (j < pos)	//é“¾å¼å­˜å‚¨ä¸­ä¸å­˜åœ¨ç‰©ç†å­˜å‚¨çš„ä½åºæ¦‚å¿µï¼Œé“¾è¡¨ä¸­èŠ‚ç‚¹çš„åºå·å¯ä»¥ä¸å…¶é€»è¾‘æè¿°ä¿æŒä¸€è‡´
+	while (j < pos)	//Á´Ê½´æ´¢ÖĞ²»´æÔÚÎïÀí´æ´¢µÄÎ»Ğò¸ÅÄî£¬Á´±íÖĞ½ÚµãµÄĞòºÅ¿ÉÒÔÓëÆäÂß¼­ÃèÊö±£³ÖÒ»ÖÂ
 	{
 		p = p->next;
 		++j;
@@ -122,20 +114,20 @@ Status GetElem(SListInfo* List, int pos, ElemType* elem)
 int LocateElem(SListInfo* List, ElemType* elem)
 {
 	LNode* p = List->head->next;
-	int j = 1;	//è®¡æ•°å™¨
-	while (p->data != *elem && p->next != List->tail)
+	int j = 1;	//¼ÆÊıÆ÷
+	while (p->data != *elem && p != NULL)
 	{
 		p = p->next;
 		j++;
 	}
-	if (p->data == *elem)
+	if (NULL == p)
+	{
+		return 0;	//Âß¼­0´ú±í´ËÔªËØ²»´æÔÚ
+	}
+	else if (p->data == *elem)
 	{
 		List->pCurNode = p;
 		return j;
-	}
-	else if (p->next == List->tail)
-	{
-		return 0;	//é€»è¾‘0ä»£è¡¨æ­¤å…ƒç´ ä¸å­˜åœ¨
 	}
 }
 Status PriorElem(SListInfo* List, ElemType curElem, ElemType* priorElem)
@@ -161,7 +153,7 @@ Status NextElem(SListInfo* List, ElemType curElem, ElemType* nextElem)
 Status ListTraverse(SListInfo* List)
 {
 	LNode* p = List->head->next;
-	while (p != List->tail)
+	while (p != NULL)
 	{
 		cout << setw(3) << p->data;
 		p = p->next;
@@ -170,10 +162,10 @@ Status ListTraverse(SListInfo* List)
 	return OK;
 }
 
-//åŠ å·¥å‹æ“ä½œ
-Status SetElem(SListInfo* List, int pos, ElemType* elem)	//æ”¹å˜posä½ç½®æ•°æ®ä¸ºelem
+//¼Ó¹¤ĞÍ²Ù×÷
+Status SetElem(SListInfo* List, int pos, ElemType* elem)	//¸Ä±äposÎ»ÖÃÊı¾İÎªelem
 {
-	int j = 1;	//è®¡æ•°å™¨
+	int j = 1;	//¼ÆÊıÆ÷
 	List->pCurNode = List->head->next;
 	if (pos > 0 && pos < List->length + 1)
 	{
@@ -187,39 +179,42 @@ Status SetElem(SListInfo* List, int pos, ElemType* elem)	//æ”¹å˜posä½ç½®æ•°æ®
 	}
 	return ERROR;
 }
-Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)		//å°†elemæ’å…¥åœ¨pCurNodeå
+Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)		//½«elem²åÈëÔÚpCurNodeºó
 {
-	//ä¸ºæ–°èŠ‚ç‚¹ç”³è¯·ç©ºé—´
+	//ÎªĞÂ½ÚµãÉêÇë¿Õ¼ä
 	LNode* newNode = (LNode*)malloc(sizeof(LNode));
 	if (newNode == NULL)
 		exit(OVERFLOW);
 	newNode->data = *elem;
 	newNode->next = NULL;
 
-	//æ’å…¥æ–°èŠ‚ç‚¹
+	//²åÈëĞÂ½Úµã
 	newNode->next = List->pCurNode->next;
 	List->pCurNode->next = newNode;
 
-	//å¦‚æœæ˜¯è¡¨å°¾èŠ‚ç‚¹ï¼Œåˆ™è¡¨å°¾æŒ‡é’ˆæ›´æ–°
-	if (List->pCurNode == List->tail)
-		newNode->next = List->tail;
+	//Èç¹ûÊÇ±íÎ²½Úµã£¬Ôò±íÎ²Ö¸Õë¸üĞÂ
+	if (List->pCurNode->next == NULL)
+		List->tail = newNode;
 
 	List->length++;	//!!!
 }
-Status DeleteElemAfterCurNode(SListInfo* List, ElemType* elem)	//åˆ é™¤pCurNodeåå…ƒç´ å¹¶åœ¨elemä¸­è¿”å›
+Status DeleteElemAfterCurNode(SListInfo* List, ElemType* elem)	//É¾³ıpCurNodeºóÔªËØ²¢ÔÚelemÖĞ·µ»Ø
 {
-	//æœ‰æ•ˆæ€§æ£€éªŒ(å½“å‰èŠ‚ç‚¹åŠä¸‹ä¸€èŠ‚ç‚¹éƒ½ä¸å¯ä»¥æ˜¯å°¾èŠ‚ç‚¹)
-	if (List->pCurNode == List->tail && List->pCurNode->next == List->tail)
+	//ÓĞĞ§ĞÔ¼ìÑé(µ±Ç°½Úµã²»¿ÉÒÔÊÇÎ²½Úµã)
+	if (List->pCurNode->next == NULL)
 		return ERROR;
 
 	*elem = List->pCurNode->next->data;
 
-	//åˆ é™¤å½“å‰èŠ‚ç‚¹ä¸‹ä¸€èŠ‚ç‚¹
+	//É¾³ıµ±Ç°½ÚµãÏÂÒ»½Úµã
 	LNode* p;
 	p = List->pCurNode->next;
 	List->pCurNode->next = List->pCurNode->next->next;
 	free(p);
-
+	if (List->pCurNode->next == NULL)
+	{
+		List->tail = List->pCurNode;
+	}
 	List->length--;	//!!!
 	return OK;
 }
@@ -229,10 +224,10 @@ int main()
 	ElemType elem;
 	cout << left;
 
-	//ä»¥ä¸‹æµ‹è¯•ä¸­ï¼Œæš‚ä¸”å°†ElemTypeå½“ä½œintç±»å‹ï¼š
+	//ÒÔÏÂ²âÊÔÖĞ£¬ÔİÇÒ½«ElemTypeµ±×÷intÀàĞÍ£º
 	if (InitList(&List))
 	{
-		//æ•°æ®è¯»å–
+		//Êı¾İ¶ÁÈ¡
 		ifstream inFile("LinkList.txt");
 		if (!inFile)
 			return ERROR;
@@ -256,7 +251,7 @@ int main()
 
 		//LocateElem, InsertElemAfterCurNode:
 		elem = 6;
-		LocateElem(&List, &elem);	//ç§»åŠ¨pCurElem
+		LocateElem(&List, &elem);	//ÒÆ¶¯pCurElem
 		if (InsertElemAfterCurNode(&List, &elem))
 		{
 			cout << setw(50) << "After InsertElemAfterCurNode, LinkList: ";
@@ -299,3 +294,4 @@ int main()
 	system("pause");
 	return 0;
 }
+

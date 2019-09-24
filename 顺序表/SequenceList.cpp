@@ -1,6 +1,8 @@
 /***************************************
  **   Filename£º SequenceList.cpp
  **
+ **	  Compiler:   Visual Studio 2019
+ **
  **   StudentID: 1618*****
  **
  **   Name:      Steven

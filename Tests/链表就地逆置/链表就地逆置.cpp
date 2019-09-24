@@ -1,3 +1,13 @@
+/***************************************
+ **   Filename： 链表就地逆置.cpp
+ **
+ **	  Compiler:   Visual Studio 2019
+ **
+ **   StudentID: 1618*****
+ **
+ **   Name:      Steven
+ **
+ ***************************************/
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -22,47 +32,45 @@ typedef struct
 	int length;
 }SListInfo;
 
-Status InitLink(SListInfo* Link)
+Status InitList(SListInfo* List)
 {
-	Link->head = NULL;
-	Link->head = (LNode*)malloc(sizeof(LNode));
-	if (NULL == Link->head)
+	//开辟头节点
+	List->head = NULL;
+	List->head = (LNode*)malloc(sizeof(SListInfo));
+	if (NULL == List->head)
 		exit(OVERFLOW);
-	Link->head->next = NULL;
+	List->head->next = NULL;
 
-	Link->tail = NULL;
-	Link->tail = (LNode*)malloc(sizeof(LNode));
-	if (NULL == Link->tail)
-		exit(OVERFLOW);
-	Link->tail->next = NULL;
-
-	Link->head->next = Link->tail;
-	Link->pCurNode = Link -> head;
-	Link->length = 0;
+	//连接
+	List->tail = List->head;
+	List->pCurNode = List->head;
+	List->length = 0;
 
 	return OK;
 }
-Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)
+Status InsertElemAfterCurNode(SListInfo* List, ElemType* elem)		//将elem插入在pCurNode后
 {
+	//为新节点申请空间
 	LNode* newNode = (LNode*)malloc(sizeof(LNode));
-	if (NULL == newNode)
+	if (newNode == NULL)
 		exit(OVERFLOW);
 	newNode->data = *elem;
 	newNode->next = NULL;
 
+	//插入新节点
 	newNode->next = List->pCurNode->next;
 	List->pCurNode->next = newNode;
 
-	if (List->pCurNode == List->tail)
-		newNode->next = List->tail;
+	//如果是表尾节点，则表尾指针更新
+	if (List->pCurNode->next == NULL)
+		List->tail = newNode;
 
-	List->length++;
-	return OK;
+	List->length++;	//!!!
 }
 Status ListTraverse(SListInfo* List)
 {
 	LNode* p = List->head->next;
-	while (p != List->tail)
+	while (p != NULL)
 	{
 		cout << setw(3) << p->data;
 		p = p->next;
@@ -72,11 +80,11 @@ Status ListTraverse(SListInfo* List)
 }
 Status LinkReverse(SListInfo* List)
 {
-	//需要三个指针联动，pCur负责反转前前进，pTemp负责记录当前节点，pRev负责记录当前节点前一个节点
+	//需要三个指针联动，pCur负责前进，pTemp负责记录当前节点，pRev负责记录前一个节点
 	
 	LNode* pCur = List->head->next;
 	LNode* pRev = List->head;
-	LNode* pTemp;
+	LNode* pTemp = pCur;
 	while (pCur != NULL)
 	{
 		pTemp = pCur;	//pTemp归位
@@ -84,10 +92,10 @@ Status LinkReverse(SListInfo* List)
 		pTemp->next = pRev;	//链接
 		pRev = pTemp;	//pRev前进
 	}
-	pTemp = List->head;
-	List->head = List->tail;
-	List->tail = pTemp;
-	List->tail->next = NULL;
+	List->head->next->next = NULL;
+	List->tail = List->head->next;
+	List->head->next = pTemp;
+
 	return OK;
 }
 int main()
@@ -95,7 +103,7 @@ int main()
 	cout << left;
 	ElemType elem;
 	SListInfo List;
-	if (InitLink(&List))
+	if (InitList(&List))
 	{
 		//读数据
 		ifstream inFile("LinkList.txt");
