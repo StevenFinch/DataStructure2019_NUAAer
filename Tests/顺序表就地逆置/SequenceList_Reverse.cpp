@@ -1,7 +1,7 @@
 /***************************************
- **   Filename�� ˳����͵�����.cpp
+ **   Filename： 顺序表就地逆置.cpp
  **
- **	  Compiler:   Visual Studio 2019
+ **   Compiler:  Visual Studio 2019
  **
  **   StudentID: 1618*****
  **
@@ -29,7 +29,7 @@ typedef struct
 
 Status InitList(SeqList* List)
 {
-	//初始化
+	//鍒濆鍖�
 	List->pElem = NULL;
 	List->pElem = (ElemType*)malloc(LIST_INIT_SIZE * sizeof(ElemType));
 	if (NULL == List->pElem)
@@ -43,7 +43,7 @@ Status InitList(SeqList* List)
 	List->length = 0;
 	List->size = LIST_INIT_SIZE;
 
-	//读取数据
+	//璇诲彇鏁版嵁
 	ifstream inFile("SeqquenceList.txt");
 	if (!inFile)
 	{
@@ -55,7 +55,7 @@ Status InitList(SeqList* List)
 		inFile >> List->pElem[i++];
 		List->length++;
 	}
-	inFile.close();	//不要忘记关闭文件
+	inFile.close();	//涓嶈蹇樿鍏抽棴鏂囦欢
 	return OK;
 }
 Status ListTraverse(SeqList* List)
