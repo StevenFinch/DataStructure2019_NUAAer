@@ -15,7 +15,7 @@ Visual Studio 2019编译成功
   * [顺序表解法](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/blob/master/第一次上机/上机1.3%20约瑟夫环/约瑟夫环问题顺序表解法.cpp)
 * [上机1.4 小明上学](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第一次上机/上机1.4%20小明升学)
 * [上机1.5 学生排队](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第一次上机/上机1.5%20学生排队)
-* [习踢2.19 删除区间元素](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第一次上机/习题2.19%20删除区间元素)
+* [习题2.19 删除区间元素](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第一次上机/习题2.19%20删除区间元素)
 ### 第二次上机
 * [上机2.1 顺序结构选择排序](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.1%20顺序结构选择排序)
 * [上机2.3 折点数](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.3%20折点数)
