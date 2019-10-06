@@ -18,6 +18,8 @@ Visual Studio 2019编译成功
 * [习题2.19 删除区间元素](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第一次上机/习题2.19%20删除区间元素)
 ### 第二次上机
 * [上机2.1 顺序结构选择排序](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.1%20顺序结构选择排序)
+  * [单链表选择排序](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.1%20顺序结构选择排序/单链表选择排序)
+  * [顺序表选择排序](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.1%20顺序结构选择排序/顺序表选择排序)
 * [上机2.3 折点数](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.3%20折点数)
 * [上机2.4 买菜](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/tree/master/第二次上机/2.4%20买菜)
   * [常规解法](https://github.com/StevenFinch/Data-Structure-NUAAer-2019/blob/master/第二次上机/2.4%20买菜/买菜常规解法.cpp)
