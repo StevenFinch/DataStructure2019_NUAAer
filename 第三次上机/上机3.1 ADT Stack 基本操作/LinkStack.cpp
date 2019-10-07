@@ -102,8 +102,7 @@ Status GetTop(LinkStackInfo* S, ElemType* e)
 }
 /*
 加工型操作
-链栈利用尾指针进行压栈，利用头结点（TopNode）进行出栈； 
-因为单链表实现情况下如果用尾指针进行出栈操作，难以找到前驱结点。 
+链栈在头结点处进行压栈和出栈操作 
 */ 
 Status Push(LinkStackInfo* S, ElemType e)
 {
