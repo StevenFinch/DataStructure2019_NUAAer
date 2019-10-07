@@ -9,7 +9,9 @@
  **
  ***************************************/
 #include <iostream>
+
 using namespace std;
+
 typedef int ElemType;
 typedef bool Status;
 typedef struct LStackNode
@@ -98,7 +100,11 @@ Status GetTop(LinkStackInfo* S, ElemType* e)
 	*e = S->pTop->next->data;
 	return true;
 }
-//加工型操作
+/*
+加工型操作
+链栈利用尾指针进行压栈，利用头结点（TopNode）进行出栈； 
+因为单链表实现情况下如果用尾指针进行出栈操作，难以找到前驱结点。 
+*/ 
 Status Push(LinkStackInfo* S, ElemType e)
 {
 	LStackNode* p = (LStackNode*)malloc(sizeof(LStackNode));
