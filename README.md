@@ -26,9 +26,9 @@ Visual Studio 2019编译成功
   * [以空间换时间解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/上机2.4%20买菜/买菜时间换空间解法.cpp)
 * [习题2.24 原空间两递增表合并为递减表](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/习题2.24%20原空间两递增表合并为递减表/原空间两递增表合并为递减表.cpp)
 ### 第三次上机
-* [上机3.1 ADT Stack 基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/3.1%20ADT%20Stack%20基本操作)
-  * [顺序栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/3.1%20ADT%20Stack%20基本操作/SeqStack.cpp)
-  * [链式栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/3.1%20ADT%20Stack%20基本操作/LinkStack.cpp)
+* [上机3.1 ADT Stack 基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.1%20ADT%20Stack%20基本操作)
+  * [顺序栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/上机3.1%20ADT%20Stack%20基本操作/SeqStack.cpp)
+  * [链式栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/上机3.1%20ADT%20Stack%20基本操作/LinkStack.cpp)
 * [上机3.2 ADT Queue 基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.2%20ADT%20Queue%20基本操作)
 * [上机3.4 像找中位数](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.4%20像找中位数)
 * [上机3.5 窗口](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.5%20窗口)
