@@ -10,7 +10,7 @@ Visual Studio 2019编译成功
 * [上机1.2 就地逆置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第一次上机/上机1.2%20就地逆置)
   * [链表就地逆置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第一次上机/上机1.2%20就地逆置/链表就地逆置)
   * [顺序表就地逆置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第一次上机/上机1.2%20就地逆置/顺序表就地逆置)
-* [上机1.3 约瑟夫环](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/线性表/线性表练习题/约瑟夫环问题)
+* [上机1.3 约瑟夫环](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第一次上机/上机1.3%20约瑟夫环)
   * [链式表解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第一次上机/上机1.3%20约瑟夫环/约瑟夫环问题链式表解法.cpp)
   * [顺序表解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第一次上机/上机1.3%20约瑟夫环/约瑟夫环问题顺序表解法.cpp)
 * [上机1.4 小明上学](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第一次上机/上机1.4%20小明升学)
