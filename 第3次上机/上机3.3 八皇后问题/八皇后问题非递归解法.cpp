@@ -1,5 +1,5 @@
 /***************************************
- **   Filename£º °Ë»ÊºóÎÊÌâ·Çµİ¹é½â·¨.cpp
+ **   Filenameï¼š å…«çš‡åé—®é¢˜éé€’å½’è§£æ³•.cpp
  **
  **   Compiler:  Visual Studio 2019
  **
@@ -7,7 +7,7 @@
  **
  **   Name:      Steven
  **
- **	  Attention: ºËĞÄ´úÂëÊÇ¶ÔËïº­ÀÏÊ¦Î±´úÂëÊµÏÖ
+ **   Attention: æ ¸å¿ƒä»£ç æ˜¯å¯¹å­™æ¶µè€å¸ˆä¼ªä»£ç å®ç°
  **
  ***************************************/
 #include<iostream>
@@ -23,7 +23,7 @@ const int OK = 1;
 const int ERROR = 0;
 typedef int Status;
 typedef struct
-{	//ÆåÅÌÉÏµÄ×ø±ê£¬µ±È»Ò²ÊÇÃ¿¸ö»ÊºóµÄ×ø±ê
+{	//æ£‹ç›˜ä¸Šçš„åæ ‡ï¼Œå½“ç„¶ä¹Ÿæ˜¯æ¯ä¸ªçš‡åçš„åæ ‡
 	int row;
 	int col;
 }Point;
@@ -36,7 +36,7 @@ typedef struct
 	int stacksize;
 }SeqStack;
 
-//Õ»²Ù×÷
+//æ ˆæ“ä½œ
 Status InitStack(SeqStack* S)
 {
 	S->pBase = NULL;
@@ -86,23 +86,23 @@ Status Pop(SeqStack* S, ElemType* e)
 	return OK;
 }
 
-//°Ë»ÊºóÎÊÌâÏà¹Øº¯Êı
+//å…«çš‡åé—®é¢˜ç›¸å…³å‡½æ•°
 Status JudgeQueenConfliction(Point newQueen, SeqStack StkQueen)
-{	//ÅĞ¶ÏĞÂµÄ»ÊºóÎ»ÖÃºÍÒÑÓĞ»ÊºóÎ»ÖÃÊÇ·ñ³åÍ»£¬³åÍ»·µ»ØRET_CONFLICT£¬²»³åÍ»·µ»ØRET_OK
-	ElemType* pCurQueen = StkQueen.pBase;	//´ÓÕ»µ×²¿¿ªÊ¼±éÀúÀ´¼ì²âÊÇ·ñºÍÒÑ¾­·ÅÖÃºÃµÄ»Êºó³åÍ»
+{	//åˆ¤æ–­æ–°çš„çš‡åä½ç½®å’Œå·²æœ‰çš‡åä½ç½®æ˜¯å¦å†²çªï¼Œå†²çªè¿”å›RET_CONFLICTï¼Œä¸å†²çªè¿”å›RET_OK
+	ElemType* pCurQueen = StkQueen.pBase;	//ä»æ ˆåº•éƒ¨å¼€å§‹éå†æ¥æ£€æµ‹æ˜¯å¦å’Œå·²ç»æ”¾ç½®å¥½çš„çš‡åå†²çª
 	int x1 = newQueen.row;
 	int y1 = newQueen.col;
-	int tag = RET_OK;//±êÖ¾Î»ÊÇ·ñÓĞ³åÍ»
+	int tag = RET_OK;//æ ‡å¿—ä½æ˜¯å¦æœ‰å†²çª
 	while (pCurQueen < StkQueen.pTop)
 	{
 		int x2 = pCurQueen->row;
 		int y2 = pCurQueen->col;
-		if (y1 == y2 || abs(y1 - y2) == x1 - x2)	//Èç¹ûÎ»ÓÚÍ¬Ò»ÁĞ»òÖ÷¸±¶Ô½ÇÏßÔòÓĞ³åÍ»
+		if (y1 == y2 || abs(y1 - y2) == x1 - x2)	//å¦‚æœä½äºåŒä¸€åˆ—æˆ–ä¸»å‰¯å¯¹è§’çº¿åˆ™æœ‰å†²çª
 		{
 			tag = RET_CONFLICT;
 			break;
 		}
-		pCurQueen++;//±éÀú
+		pCurQueen++;//éå†
 	}
 	return tag;
 }
@@ -124,63 +124,63 @@ Status OutputResult(SeqStack StkQueen, int N)
 	return OK;
 }
 Status PlaceQueen(int N)
-{	//N»ÊºóÎÊÌâ·Çµİ¹éÊµÏÖ
+{	//Nçš‡åé—®é¢˜éé€’å½’å®ç°
 	SeqStack StkQueen;
-	Point curQueen;	//¶Ôµ±Ç°»Êºó½øĞĞÒ»ÏµÁĞ²Ù×÷
+	Point curQueen;	//å¯¹å½“å‰çš‡åè¿›è¡Œä¸€ç³»åˆ—æ“ä½œ
 
 	InitStack(&StkQueen);
-	int resultCount = 0;	//N»ÊºóÎÊÌâ½âµÄÊıÁ¿
+	int resultCount = 0;	//Nçš‡åé—®é¢˜è§£çš„æ•°é‡
 
-	//½ÓÏÂÀ´ÕıÊ½¿ªÊ¼·Å»ÊºóµÄ¹ı³Ì
-	curQueen.row = 1;	//Ä¿Ç°Ó¦¸Ã´¦ÀíµÄ£¨µÚÒ»¸ö»Êºó£©µÄÎ»ÖÃ
+	//æ¥ä¸‹æ¥æ­£å¼å¼€å§‹æ”¾çš‡åçš„è¿‡ç¨‹
+	curQueen.row = 1;	//ç›®å‰åº”è¯¥å¤„ç†çš„ï¼ˆç¬¬ä¸€ä¸ªçš‡åï¼‰çš„ä½ç½®
 	curQueen.col = 1;
 	Push(&StkQueen, curQueen);
 
-	curQueen.row = 2;	//µÚ¶ş¸ö»ÊºóµÄÆğÊ¼ÊÔÌ½Î»ÖÃ
+	curQueen.row = 2;	//ç¬¬äºŒä¸ªçš‡åçš„èµ·å§‹è¯•æ¢ä½ç½®
 	curQueen.col = 1;
 	while (curQueen.row <= N && curQueen.col <= N)
 	{
 		Status ret;
 		while (curQueen.col <= N)
-		{	//ÔÚÃ¿ĞĞÎª×Ô¼ºÑ°ÕÒºÏÊÊÎ»ÖÃ
+		{	//åœ¨æ¯è¡Œä¸ºè‡ªå·±å¯»æ‰¾åˆé€‚ä½ç½®
 			ret = JudgeQueenConfliction(curQueen, StkQueen);
 			if (RET_OK == ret)
-				break;	//ÕÒµ½ÁËÊôÓÚ×Ô¼ºµÄÎ»ÖÃ
-			curQueen.col = curQueen.col + 1;	//´æÔÚ³åÍ»¼ÌĞøÕÒÏÂÒ»ÁĞ
-		}	//×¢ÒâÕâÀïÖ»ÊÇÏÈÑ°ÕÒÎ»ÖÃ¶øÃ»ÓĞ½øĞĞÑ¹Õ»²Ù×÷
-		if (RET_OK == ret)	//ÕÒµ½ÁËºÏÊÊµÄÎ»ÖÃÃ»ÓĞºÍÖ®Ç°»Êºó·¢Éú³åÍ»
+				break;	//æ‰¾åˆ°äº†å±äºè‡ªå·±çš„ä½ç½®
+			curQueen.col = curQueen.col + 1;	//å­˜åœ¨å†²çªç»§ç»­æ‰¾ä¸‹ä¸€åˆ—
+		}	//æ³¨æ„è¿™é‡Œåªæ˜¯å…ˆå¯»æ‰¾ä½ç½®è€Œæ²¡æœ‰è¿›è¡Œå‹æ ˆæ“ä½œ
+		if (RET_OK == ret)	//æ‰¾åˆ°äº†åˆé€‚çš„ä½ç½®æ²¡æœ‰å’Œä¹‹å‰çš‡åå‘ç”Ÿå†²çª
 		{
 			Push(&StkQueen, curQueen);
 			curQueen.row = curQueen.row + 1;
-			curQueen.col = 1;	//×¼±¸Ö´ĞĞÏÂÒ»´ÎwhileÑ­»·À´ÎªÏÂÒ»ĞĞµÄ»ÊºóÕÒÊôÓÚ×Ô¼ºµÄÎ»ÖÃ
-			if (curQueen.row > N)	//ÒÑ¾­ÊÇ×îºóÒ»¸ö»ÊºóÁË£¬Ö¤Ã÷ÒÑ¾­°ÚºÃ
+			curQueen.col = 1;	//å‡†å¤‡æ‰§è¡Œä¸‹ä¸€æ¬¡whileå¾ªç¯æ¥ä¸ºä¸‹ä¸€è¡Œçš„çš‡åæ‰¾å±äºè‡ªå·±çš„ä½ç½®
+			if (curQueen.row > N)	//å·²ç»æ˜¯æœ€åä¸€ä¸ªçš‡åäº†ï¼Œè¯æ˜å·²ç»æ‘†å¥½
 			{
-				resultCount++;	//½âµÄ¸öÊı¼ÓÒ»
+				resultCount++;	//è§£çš„ä¸ªæ•°åŠ ä¸€
 				cout << "Solution " << resultCount << ":" << endl;
-				OutputResult(StkQueen, N);	//Êä³öµ±Ç°½á¹û
+				OutputResult(StkQueen, N);	//è¾“å‡ºå½“å‰ç»“æœ
 
 
-				Pop(&StkQueen, &curQueen);	//ÕâÁ½ĞĞÓï¾äÊÇÒª½«µ±Ç°»Êºóµ¯Õ»£¬È»ºó¿´¿´±¾ĞĞÊÇ²»ÊÇ»¹ÓĞÏÂÒ»¸öºÏÊÊµÄÎ»ÖÃ
+				Pop(&StkQueen, &curQueen);	//è¿™ä¸¤è¡Œè¯­å¥æ˜¯è¦å°†å½“å‰çš‡åå¼¹æ ˆï¼Œç„¶åçœ‹çœ‹æœ¬è¡Œæ˜¯ä¸æ˜¯è¿˜æœ‰ä¸‹ä¸€ä¸ªåˆé€‚çš„ä½ç½®
 				curQueen.col = curQueen.col + 1;
-				while (curQueen.col > N && !StkQueen.stacklength == 0)	//²»Âú×ãÒªÇó£¬¼ÌĞø»ØÍË
+				while (curQueen.col > N && !StkQueen.stacklength == 0)	//ä¸æ»¡è¶³è¦æ±‚ï¼Œç»§ç»­å›é€€
 				{
 					Pop(&StkQueen, &curQueen);
 					curQueen.col = curQueen.col + 1;
 				}
 			}
 		}
-		else //Õâ¸ö»ÊºóÃ»ÓĞÔÚ±¾ĞĞÕÒµ½ÊôÓÚ×Ô¼ºµÄÎ»ÖÃ£¬Ò²¾ÍÊÇËµĞèÒª»ØËİÁË
+		else //è¿™ä¸ªçš‡åæ²¡æœ‰åœ¨æœ¬è¡Œæ‰¾åˆ°å±äºè‡ªå·±çš„ä½ç½®ï¼Œä¹Ÿå°±æ˜¯è¯´éœ€è¦å›æº¯äº†
 		{
-			Pop(&StkQueen, &curQueen);	//ÕâÁ½ĞĞÓï¾äÊÇÒªµÃµ½ÉÏÒ»ĞĞµÄ»ÊºóÈ»ºóÏòÓÒÒÆ¶¯Ëı
-			curQueen.col = curQueen.col + 1;	//ÕâÊ±ºòÒ²ÒÑ¾­×¼±¸ÏÂÒ»´ÎwhileÑ­»·ÎªÕâ¸ö»ÊºóÕÒµ½ÏÂÒ»¸öºÏÊÊµÄÎ»ÖÃ
-			while (curQueen.col > N && !StkQueen.stacklength == 0)	//µ«ÊÇÕâ¸ö»ÊºóÒÑ¾­µ½ÁË×îºóÒ»ÁĞ»òÕßÕ»¿ÕÁË£¬²»Âú×ãÒªÇó£¬ËùÒÔ¼ÌĞø»ØÍË
+			Pop(&StkQueen, &curQueen);	//è¿™ä¸¤è¡Œè¯­å¥æ˜¯è¦å¾—åˆ°ä¸Šä¸€è¡Œçš„çš‡åç„¶åå‘å³ç§»åŠ¨å¥¹
+			curQueen.col = curQueen.col + 1;	//è¿™æ—¶å€™ä¹Ÿå·²ç»å‡†å¤‡ä¸‹ä¸€æ¬¡whileå¾ªç¯ä¸ºè¿™ä¸ªçš‡åæ‰¾åˆ°ä¸‹ä¸€ä¸ªåˆé€‚çš„ä½ç½®
+			while (curQueen.col > N && !StkQueen.stacklength == 0)	//ä½†æ˜¯è¿™ä¸ªçš‡åå·²ç»åˆ°äº†æœ€åä¸€åˆ—æˆ–è€…æ ˆç©ºäº†ï¼Œä¸æ»¡è¶³è¦æ±‚ï¼Œæ‰€ä»¥ç»§ç»­å›é€€
 			{
 				Pop(&StkQueen, &curQueen);
 				curQueen.col = curQueen.col + 1;
 			}
 		}
 	}
-	cout << "Total number of Solutions£º " << resultCount << endl;
+	cout << "Total number of Solutionsï¼š " << resultCount << endl;
 	DestroyStack(&StkQueen);
 	return OK;
 }
