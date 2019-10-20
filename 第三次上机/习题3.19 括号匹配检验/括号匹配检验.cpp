@@ -1,6 +1,6 @@
   
 /***************************************
- **   Filename£º À¨ºÅÆ¥Åä¼ìÑé.cpp
+ **   Filenameï¼š æ‹¬å·åŒ¹é…æ£€éªŒ.cpp
  **
  **   Compiler:  Visual Studio 2019
  **
@@ -18,10 +18,13 @@ using namespace std;
 const bool RET_ERROR_EXTRA = false;
 const bool RET_ERROR_NOTMATCH = false;
 const bool RET_OK = true;
+/*
+ä¸åŒ¹é…æƒ…å†µæœ‰ä¸‰ç§ï¼š1.æ­£å¸¸é”™è¯¯å³ä¸èƒ½åŒ¹é…æ­£ç¡®çš„æ‹¬å· 2.å‰é¢å·²ç»åŒ¹é…å®Œï¼Œæœ€ç»ˆå¤šå‡ºæ¥äº†å‡ ä¸ªå³æ‹¬å· 3.å·¦æ‹¬å·å¤šäº†ï¼Œæ²¡æœ‰ç¬¦åˆçš„å³æ‹¬å·
+*/
 bool CheckBracketsMatching(vector<char>& V, stack<char>& S)
 {
 	vector<char>::iterator it = V.begin();
-	bool tag = RET_OK;//±êÖ¾Î»
+	bool tag = RET_OK;//æ ‡å¿—ä½
 
 	for (it; it != V.end(); it++)
 	{
@@ -44,9 +47,9 @@ bool CheckBracketsMatching(vector<char>& V, stack<char>& S)
 		}
 		case(')'):
 		{
-			if (S.empty())//ÓÒÀ¨ºÅ¶àÁË£¬Ã»µÃÆ¥Åä
+			if (S.empty())//å³æ‹¬å·å¤šäº†ï¼Œæ²¡å¾—åŒ¹é…
 				tag = RET_ERROR_EXTRA;
-			else if (S.top() != '(')//²»Æ¥Åä
+			else if (S.top() != '(')//ä¸åŒ¹é…
 				tag = RET_ERROR_NOTMATCH;
 			else
 				S.pop();
@@ -55,9 +58,9 @@ bool CheckBracketsMatching(vector<char>& V, stack<char>& S)
 
 		case(']'):
 		{
-			if (S.empty())//ÓÒÀ¨ºÅ¶àÁË£¬Ã»µÃÆ¥Åä
+			if (S.empty())//å³æ‹¬å·å¤šäº†ï¼Œæ²¡å¾—åŒ¹é…
 				tag = RET_ERROR_EXTRA;
-			else if (S.top() != '[')//²»Æ¥Åä
+			else if (S.top() != '[')//ä¸åŒ¹é…
 				tag = RET_ERROR_NOTMATCH;
 			else
 				S.pop();
@@ -65,19 +68,19 @@ bool CheckBracketsMatching(vector<char>& V, stack<char>& S)
 		}
 		case('}'):
 		{
-			if (S.empty())//ÓÒÀ¨ºÅ¶àÁË£¬Ã»µÃÆ¥Åä
+			if (S.empty())//å³æ‹¬å·å¤šäº†ï¼Œæ²¡å¾—åŒ¹é…
 				tag = RET_ERROR_EXTRA;
-			else if (S.top() != '{')//²»Æ¥Åä
+			else if (S.top() != '{')//ä¸åŒ¹é…
 				tag = RET_ERROR_NOTMATCH;
 			else
 				S.pop();
 			break;
 		}
 		default:
-			break;//ÆäËû×Ö·û
+			break;//å…¶ä»–å­—ç¬¦
 		}
 	}
-	if (!S.empty() && RET_OK == tag)//Õ»·Ç¿ÕËµÃ÷»¹ÓĞ×óÀ¨ºÅ
+	if (!S.empty() && RET_OK == tag)//æ ˆéç©ºè¯´æ˜è¿˜æœ‰å·¦æ‹¬å·
 		return RET_ERROR_EXTRA;
 	return tag;
 }
@@ -93,7 +96,7 @@ int main()
 	while (!fin.eof())
 	{
 		fin >> b;
-		if (fin.fail())//·ÅÖÃ×îºóÒ»¸ö×Ö·û¶ÁÁ½±é
+		if (fin.fail())//æ”¾ç½®æœ€åä¸€ä¸ªå­—ç¬¦è¯»ä¸¤é
 		{
 			break;
 		}
