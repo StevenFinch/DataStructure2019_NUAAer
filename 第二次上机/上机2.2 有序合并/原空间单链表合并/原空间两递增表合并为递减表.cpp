@@ -1,5 +1,5 @@
 /***************************************
- **   Filename£º ¿Õ¼äÁ½µİÔö±íºÏ²¢Îªµİ¼õ±í.cpp
+ **   Filenameï¼š ç©ºé—´ä¸¤é€’å¢è¡¨åˆå¹¶ä¸ºé€’å‡è¡¨.cpp
  **
  **   Compiler:  Visual Studio 2019
  **
@@ -7,7 +7,8 @@
  **
  **   Name:      Steven
  **
- ***************************************/#include<iostream>
+ ***************************************/
+#include<iostream>
 using namespace std;
 
 const int OK = 1;
@@ -49,7 +50,7 @@ Status ListTraverse(SListInfo* List)
 	cout << endl;
 	return OK;
 }
-//·ÇÍ·²å·¨£¬¸Ä±äÁËpCur
+//éå¤´æ’æ³•ï¼Œæ”¹å˜äº†pCur
 Status InsertElemAfterCurNode(SListInfo* List, int elem)
 {
 	LNode* newNode = (LNode*)malloc(sizeof(LNode));
@@ -67,16 +68,16 @@ Status InsertElemAfterCurNode(SListInfo* List, int elem)
 
 	List->length++;
 }
-Status MergeTwoList(SListInfo* L1, SListInfo* L2, SListInfo* L3)	//L3Ö¸ÏòĞÂ±íÍ·½áµã
+Status MergeTwoList(SListInfo* L1, SListInfo* L2, SListInfo* L3)	//L3æŒ‡å‘æ–°è¡¨å¤´ç»“ç‚¹
 {
-	if (L1->head == NULL || L2->head == NULL)//±í²»´æÔÚ
+	if (L1->head == NULL || L2->head == NULL)//è¡¨ä¸å­˜åœ¨
 		return ERROR;
-	LNode* p1 = L1->head->next;//±éÀúL1½øĞĞ±È½Ï
-	LNode* p2 = L2->head->next;//±éÀúL2½øĞĞ±È½Ï
-	LNode* s = NULL;//Ç°ÇıÖ¸Õë
+	LNode* p1 = L1->head->next;//éå†L1è¿›è¡Œæ¯”è¾ƒ
+	LNode* p2 = L2->head->next;//éå†L2è¿›è¡Œæ¯”è¾ƒ
+	LNode* s = NULL;//å‰é©±æŒ‡é’ˆ
 
-	L3->head = L1->head;//Ö¸ÏòL1Í·½áµã³äµ±L3Í·½áµã
-	L1->head->next = NULL;//½¨Á¢ĞÂ±í
+	L3->head = L1->head;//æŒ‡å‘L1å¤´ç»“ç‚¹å……å½“L3å¤´ç»“ç‚¹
+	L1->head->next = NULL;//å»ºç«‹æ–°è¡¨
 	L3->pCurNode = L3->head;
 	L3->length = 0;
 
@@ -84,7 +85,7 @@ Status MergeTwoList(SListInfo* L1, SListInfo* L2, SListInfo* L3)	//L3Ö¸ÏòĞÂ±íÍ·½
 	{
 		if (p1->data <= p2->data)
 		{
-			//*Í·²å·¨±£Ö¤ĞÂ±íL3µİ¼õÓĞĞò
+			//*å¤´æ’æ³•ä¿è¯æ–°è¡¨L3é€’å‡æœ‰åº
 			s = p1->next;
 			p1->next = L1->head->next;
 			L1->head->next = p1;
@@ -93,7 +94,7 @@ Status MergeTwoList(SListInfo* L1, SListInfo* L2, SListInfo* L3)	//L3Ö¸ÏòĞÂ±íÍ·½
 		}
 		else
 		{
-			//*Í·²å·¨±£Ö¤ĞÂ±íL3µİ¼õÓĞĞò
+			//*å¤´æ’æ³•ä¿è¯æ–°è¡¨L3é€’å‡æœ‰åº
 			s = p2->next;
 			p2->next = L1->head->next;
 			L1->head->next = p2;
@@ -121,7 +122,7 @@ Status MergeTwoList(SListInfo* L1, SListInfo* L2, SListInfo* L3)	//L3Ö¸ÏòĞÂ±íÍ·½
 }
 int main()
 {
-	//½¨ÓĞĞò±í
+	//å»ºæœ‰åºè¡¨
 	SListInfo L1, L2, L3;
 	if (InitList(&L1) && InitList(&L2) && InitList(&L3))
 	{
@@ -134,7 +135,7 @@ int main()
 	ListTraverse(&L1);
 	ListTraverse(&L2);
 
-	//ºÏ²¢
+	//åˆå¹¶
 	MergeTwoList(&L1, &L2, &L3);
 	ListTraverse(&L3);
 
