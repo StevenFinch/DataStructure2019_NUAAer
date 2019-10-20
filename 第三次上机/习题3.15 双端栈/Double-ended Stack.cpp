@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int MAXSIZE = 10;
+const int MAXSIZE = 256;
 const int OK = 1;
 const int ERROR = 0;
 typedef int Status;
@@ -41,14 +41,14 @@ Status InitStack(DqStack* S)
 Status Push(DqStack* S, int e, int stacknum)
 {
 	if (S->top[0] == S->top[1])
-		return ERROR;//stack is full
+		return ERROR;//stack is full, another larger stack is needed
 
 	switch (stacknum)
 	{
 	case(0):
 		S->data[S->top[0]] = e;
 		S->top[0]++;
-		break;
+		break;//break
 	case(1):
 		S->data[S->top[1]] = e;
 		S->top[1]--;
@@ -99,5 +99,6 @@ int main()
 		Push(&S, i, i % 2);
 	}
 	TraverseStack(&S);
+	//DestroyStack(&S);
 	return 0;
 }
