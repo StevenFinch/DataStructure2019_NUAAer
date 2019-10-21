@@ -35,7 +35,3 @@ Visual Studio 2019编译成功
 * [上机3.4 像找中位数](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.4%20像找中位数)
 * [上机3.5 窗口](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.5%20窗口)
 * [习题3.15 双端栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.15%20双端栈/Double-ended%20Stack.cpp)
-### 第四次上机
-* [上机4.1 稀疏矩阵转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置)
-  * [普通转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置/普通转置.cpp)
-  * [快速转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置/快速转置.cpp)
