@@ -25,7 +25,7 @@ Visual Studio 2019编译成功
 * [上机2.4 买菜](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第二次上机/上机2.4%20买菜)
   * [常规解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/上机2.4%20买菜/买菜常规解法.cpp)
   * [以空间换时间解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/上机2.4%20买菜/买菜时间换空间解法.cpp)
-* [习题2.24 原空间两递增表合并为递减表](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/习题2.24%20原空间两递增表合并为递减表/原空间两递增表合并为递减表.cpp)
+* [习题2.24 原空间两递增表合并为递减表](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第二次上机/习题2.24%20原空间两递增表合并为递减表)
 ### 第三次上机
 * [上机3.1 ADT Stack 基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.1%20ADT%20Stack%20基本操作)
   * [顺序栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/上机3.1%20ADT%20Stack%20基本操作/SeqStack.cpp)
@@ -34,9 +34,10 @@ Visual Studio 2019编译成功
 * [上机3.3 八皇后问题非递归解法](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/上机3.3%20八皇后问题/八皇后问题非递归解法.cpp)
 * [上机3.4 像找中位数](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.4%20像找中位数)
 * [上机3.5 窗口](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第三次上机/上机3.5%20窗口)
-* [习题3.15 双端栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.15%20双端栈/Double-ended%20Stack.cpp)
+* [习题3.15 双端栈](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.15%20双端栈)
+* [习题3.19 括号匹配检验](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.19%20括号匹配检验)
+* [习题3.31 回文判断](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.31%20回文判断)
 ### 第四次上机
 * [上机4.1 稀疏矩阵转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置)
   * [普通转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置/普通转置.cpp)
-  * [快速转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20普通转置/快速转置.cpp)
-* [习题3.19 括号匹配检验](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第三次上机/习题3.19%20括号匹配检验
+  * [快速转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.1%20快速转置/快速转置.cpp)
