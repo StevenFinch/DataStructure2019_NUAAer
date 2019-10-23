@@ -34,6 +34,6 @@ int main()
 		advance(iter, (setNum.size() + 1) / 2 - 1);
 		cout << *iter;
 	}
-	system("pause");
+	//system("pause");
 	return 0;
 }
