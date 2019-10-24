@@ -15,7 +15,7 @@ using namespace std;
 int main ()
 {
 	int n;
-	cin >> n;
+	cin >> n; 
 	map<int, int> M;//first: number, second: how many
 	for(int i = 0; i < n; i++)
 	{//input 
