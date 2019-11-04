@@ -43,3 +43,6 @@ Visual Studio 2019编译成功
   * [快速转置](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/第四次上机/上机4.1%20稀疏矩阵转置/快速转置.cpp)
 * [上机4.2 求矩阵马鞍点](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.2%20求矩阵马鞍点)
 * [上机4.3 相邻数对](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第四次上机/上机4.3%20相邻数对)
+### 第五次上机
+* [上机5.x Binary Tree基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/第五次上机/上机5.x%20Binary%20Tree基本操作)
+* [上机5.5 开心消消乐](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%B8%8A%E6%9C%BA/%E4%B8%8A%E6%9C%BA5.5%20%E6%B2%99%E9%9B%95%E9%A2%98..NULL)
