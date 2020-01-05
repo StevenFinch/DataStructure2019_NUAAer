@@ -203,7 +203,7 @@ void BFSTraverse(MGraph G)
 			Visited[i] = 1;
 			cout << G.vexs[i].info << " ";
 			Q.push(G.vexs[i].info);
-			while (!Q.empty())·
+			while (!Q.empty())
 			{
 				u = Q.front();
 				Q.pop();

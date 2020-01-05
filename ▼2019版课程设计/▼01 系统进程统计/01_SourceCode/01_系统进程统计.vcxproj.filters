@@ -15,25 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkList.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="01_main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="01_process.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="01_LinkList.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="01_process.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Source.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  stdafx.cpp
   lianlian.cpp
-C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼22 连连看\lianlian\lianlian.cpp(307,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼22 连连看\lianlian\lianlian.cpp(314,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   lianlian.vcxproj -> C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼22 连连看\Debug\lianlian.exe

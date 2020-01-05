@@ -1,8 +1,20 @@
 /*	Compiler: Visual Studio 2019
 **	UpdateTime: 2019/11/07
 **	ID: 161840225   */
+
 #include"上机5.1 Binary Tree基本操作.h"
+
 using namespace std;
+/*
+            A
+		  /   \
+		B      C
+	  /  \    /  \
+	 D    E  F    G
+	/ \      \
+   H   I      J
+
+*/
 void CreateBinTree(ifstream& fin, BinTree& T)//一定是引用型指针或者指向指针的指针！
 {//根据先序序列构建二叉树
 	ElemType e;

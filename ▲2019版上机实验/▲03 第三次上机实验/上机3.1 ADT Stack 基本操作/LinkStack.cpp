@@ -27,7 +27,7 @@ Status InitStack(LinkStackInfo* S)
 	if (NULL == S->pTop)
 		return false;
 	S->pTop->data = -1;
-	S->pTop->next = NULL;
+	S->pTop->next = NULL; 
 	S->pBase = S->pTop;
 	S->stacklength = 0;
 	return true;

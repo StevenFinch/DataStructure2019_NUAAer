@@ -1,0 +1,22 @@
+﻿  main.cpp
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(73,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(75,17): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(90,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(92,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(87,9): warning C4101: “j”: 未引用的局部变量
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(87,6): warning C4101: “i”: 未引用的局部变量
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(113,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(115,17): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(128,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(130,17): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(132,22): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(220,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(222,22): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(235,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(268,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(270,17): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(279,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(281,17): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(283,22): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\main.cpp(261): warning C4715: “TaskOne”: 不是所有的控件路径都返回值
+  ▼07 公交线路规划.vcxproj -> C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼07 公交线路规划\Debug\▼07 公交线路规划.exe

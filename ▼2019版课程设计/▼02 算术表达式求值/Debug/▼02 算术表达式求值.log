@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(30,11): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(49,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(86,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(192,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(233,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\main.cpp(201): warning C4715: “CheckStr”: 不是所有的控件路径都返回值
+  ▼02 算术表达式求值.vcxproj -> C:\Users\Steven\Desktop\StevenFinch\Github\DataStructure2019_NUAAer\▼2019版课程设计\▼02 算术表达式求值\Debug\▼02 算术表达式求值.exe
