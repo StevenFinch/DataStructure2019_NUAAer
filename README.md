@@ -3,19 +3,18 @@
 * 南京航空航天大学计算机科学与技术学院数据结构课程（2019）
   * [上机实验题目](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE-2019%E7%89%88.doc)
   * [课程设计题目](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%A2%98%E7%9B%AE-2019%E7%89%88.doc)
-* 课程要求下的
+* 课程要求下的部分
   * [上机实验代码](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E2%96%B22019%E7%89%88%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C)
-  * [部分课程设计代码](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC05%20%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)
-## 代码来源
-* 孙涵老师的课程主页
-* 由于众所周知的原因不能访问的Google
-* 刘、田、杜等同学的指导
+  * [课程设计代码](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC05%20%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)
+## 参考资料
+* [孙涵老师的课程主页](http://www.sunnyimgtech.com/)
+* [Google](https://www.google.com/)
 * [《数据结构》-严蔚敏.吴伟民-教材源码与习题解析](https://github.com/kangjianwei/Data-Structure)
+* 很多好朋友的code
 ## 写在前面
-* 迫切希望各位大佬指点以及志同道合的同学一起交流
-* 部分代码属于依葫芦画瓢，一边模仿一边创新嘛。
-* 为什么要整理出来呢？因为有成就感/怕电脑废了/方便复习/证明菜归菜但是我学过
-* 隔一段时间看之前写的代码总能看出有待完善的地方，但是莫得那么多时间和精力去修改了，只能记下来在日后写代码的过程中多多注意；所以这些代码很大几率不再更新了
+* 希望有更多的志同道合的同学一起交流；
+* 部分代码属于依葫芦画瓢型代码，一边模仿一边改进；
+* 隔一段时间看之前写的代码总能看出有待完善的地方，但是改起来时间成本太大，只能记下来在日后写代码的过程中多多注意，所以这些代码应该不再更新了。
 ## 上机实验目录
 * [上机1.1 ADT List 基本操作](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E2%96%B22019%E7%89%88%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E2%96%B201%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E4%B8%8A%E6%9C%BA1.1%20ADT%20List%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C)
   * [顺序表实现](https://github.com/StevenFinch/DataStructure-NUAAer-2019/tree/master/%E2%96%B22019%E7%89%88%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E2%96%B201%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E4%B8%8A%E6%9C%BA1.1%20ADT%20List%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0)
@@ -68,4 +67,5 @@
 * [上机8.5 数字排序](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/%E2%96%B22019%E7%89%88%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E2%96%B208%20%E7%AC%AC%E5%85%AB%E6%AC%A1%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E4%B8%8A%E6%9C%BA8.5%20%E6%95%B0%E5%AD%97%E6%8E%92%E5%BA%8F.cpp)
 ## 上机实验目录
 ### 必做题
+* [02 算术表达式求值](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC02%20%E7%AE%97%E6%9C%AF%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC)
 ### 选做题

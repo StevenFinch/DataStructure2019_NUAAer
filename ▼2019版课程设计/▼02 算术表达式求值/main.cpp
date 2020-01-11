@@ -40,17 +40,24 @@ string ClearSpace(string str)
 }
 
 //分离操作符和操作数
-vector<string> SeperateStr(string str)
+int SeperateStr(vector<string>& res, string str)
 {
 	string tmp = "";
+	int pointc = 0;
 	vector<string> exp;
-	vector<string> res;
+	//vector<string> res;
 
 	for (int i = 0; i < str.length(); ++i)
 	{
 		//收集数字
 		if (isdigit(str[i]) || str[i] == '.')
 		{
+			if (str[i] == '.')
+				pointc++;
+			if (pointc > 1)
+			{
+				return 0;
+			}
 			tmp += str[i];
 		}
 
@@ -66,7 +73,12 @@ vector<string> SeperateStr(string str)
 			else
 			{
 				//把收集到的数字加入exp
-				exp.push_back(tmp);
+				if (isdigit(str[i - 1]))
+				{
+					exp.push_back(tmp);
+					pointc = 0;
+				}
+					
 
 				//把当前运算符加入exp
 				tmp = str[i];
@@ -97,8 +109,8 @@ vector<string> SeperateStr(string str)
 			res.push_back(exp[i]);
 		}
 	}
-
-	return res;
+	return 1;
+	//return res;
 }
 
 //比较运算符优先级
@@ -223,7 +235,9 @@ void PrintStack(stack<double> opdSt, stack<string> optSt)
 //栈操作
 double CalExpress(string str)
 {
-	vector<string> exp = SeperateStr(str);
+	vector<string> exp;
+	if (SeperateStr(exp, str) == 0)
+		return FLT_MAX;
 
 	stack<double> opdSt;//运算数栈
 	stack<string> optSt;//运算符栈
@@ -247,9 +261,9 @@ double CalExpress(string str)
 			{
 				string topOpt = optSt.top();
 
-				if (CompareOpt(topOpt[0], c[0]) == '>')//栈顶优先级不小于当前优先级
+				if (CompareOpt(topOpt[0], c[0]) == '>' || CompareOpt(topOpt[0], c[0]) == '=')//栈顶优先级不小于当前优先级
 				{
-					while (CompareOpt(topOpt[0], c[0]) == '>')
+					while (CompareOpt(topOpt[0], c[0]) == '>' || CompareOpt(topOpt[0], c[0]) == '=')
 					{
 						optSt.pop();
 						PrintStack(opdSt, optSt);
@@ -335,13 +349,22 @@ int main()
 
 		if (!CheckStr(res))
 		{
-			cout << "算数表达式非法，请检查是否含有中文字符等非法字符。" << endl << endl;
+			cout << "算数表达式非法，请仔戏检查表达式是否含有中文字符等非法字符输入。" << endl << endl;
 			cout << "请输入运算表达式: ";
 			continue;
 		}
 
-		cout << "该表达式结果为：  " << str.c_str() << '=' << CalExpress(str) << endl << endl;
-		cout << "请输入运算表达式: ";
+		double ans = CalExpress(res);
+		if (ans != FLT_MAX)
+		{
+			cout << "该表达式结果为：  " << str.c_str() << '=' << ans << endl << endl;
+			cout << "请输入运算表达式: ";
+		}
+		else
+		{
+			cout << "算数表达式非法，请仔戏检查表达式输入格式。" << endl << endl;
+			cout << "请输入运算表达式: ";
+		}
 	}
 
 	return 0;
