@@ -67,5 +67,15 @@
 * [上机8.5 数字排序](https://github.com/StevenFinch/DataStructure-NUAAer-2019/blob/master/%E2%96%B22019%E7%89%88%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E2%96%B208%20%E7%AC%AC%E5%85%AB%E6%AC%A1%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/%E4%B8%8A%E6%9C%BA8.5%20%E6%95%B0%E5%AD%97%E6%8E%92%E5%BA%8F.cpp)
 ## 上机实验目录
 ### 必做题
-* [02 算术表达式求值](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC02%20%E7%AE%97%E6%9C%AF%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC)
+*  [02 算术表达式求值](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC02%20%E7%AE%97%E6%9C%AF%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC)
+* [03 公共钥匙盒](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC03%20%E5%85%AC%E5%85%B1%E9%92%A5%E5%8C%99%E7%9B%92)
+* [05 哈夫曼编码](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC05%20%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)
+* [06 最小生成树](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC06%20%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91)
+* [07 公交线路规划](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC07%20%E5%85%AC%E4%BA%A4%E7%BA%BF%E8%B7%AF%E8%A7%84%E5%88%92)
+* [08 排序算法比较](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC08%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83)
 ### 选做题
+* [09 用扑克牌计算24点](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC09%20%E7%94%A8%E6%89%91%E5%85%8B%E7%89%8C%E8%AE%A1%E7%AE%9724%E7%82%B9)
+* [14 跳一跳](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC14%20%E8%B7%B3%E4%B8%80%E8%B7%B3)
+* [15 URL映射](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC15%20URL%E6%98%A0%E5%B0%84)
+* [16 迷宫问题](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC16%20%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98)
+* [22 连连看](https://github.com/StevenFinch/DataStructure2019_NUAAer/tree/master/%E2%96%BC2019%E7%89%88%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/%E2%96%BC22%20%E8%BF%9E%E8%BF%9E%E7%9C%8B)
