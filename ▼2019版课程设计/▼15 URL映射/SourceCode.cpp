@@ -22,7 +22,7 @@ typedef struct Node
 } UrlMapping;
 bool match(string url, UrlMapping urlmappings)
 {
-	smatch result;//匹配数组
+	smatch result;
 	if (!regex_match(url, result, regex(urlmappings.rule)))
 		return false;
 
@@ -31,7 +31,7 @@ bool match(string url, UrlMapping urlmappings)
 	{
 		if (regex_match(result.str(i), regex("\\d+")))
 		{
-			cout << ' ' << stoi(result.str(i));//去掉前导0
+			cout << ' ' << stoi(result.str(i));//脠楼碌么脟掳碌录0
 		}
 		else
 		{
