@@ -12,14 +12,14 @@ typedef struct
 {
 	int i;//行号
 	int j;//列号
-	int e;//数�?
-}triple;//矩阵中的每一个元�?
+	int e;
+}triple;//矩阵中的每一个元素
 typedef struct
 {
 	triple data[MAXSIZE + 1];//存储的非零元数据,data[0]弃用
 	int row_num;//矩阵行数
 	int col_num;//矩阵列数
-	int total_num;//矩阵非零元个�?
+	int total_num;//矩阵非零元个数
 }SMatrix_;
 void CreateSMatrix(SMatrix_& SMatrix)
 {
@@ -47,7 +47,7 @@ void CreateSMatrix(SMatrix_& SMatrix)
 		SMatrix.total_num = 0;
 	}
 
-	int p = 1;//遍历稀疏矩阵中每一个元�?
+	int p = 1;//遍历稀疏矩阵中每一个元素
 	int temp;//临时存储元素
 
 	while (!fin.eof())
@@ -81,16 +81,6 @@ void OutputSMatrixInfo(SMatrix_& SMatrix)
 	for (int i = 1; i < SMatrix.total_num + 1; i++)
 		cout << setw(16) << '(' << SMatrix.data[i].i << ' ' << SMatrix.data[i].j << ' ' << SMatrix.data[i].e << ')' << endl;
 }
-void OutputSMatrixInfo(SMatrix_& SMatrix)
-{
-	cout << "Sparse Matrix Info: " << endl;
-	cout << "1.Row   Number: " << SMatrix.row_num << endl;
-	cout << "2.Col   Number: " << SMatrix.col_num << endl;
-	cout << "3.Total Number: " << SMatrix.total_num << endl;
-	cout << "4.SMatrix Data: " << endl;
-	for (int i = 1; i < SMatrix.total_num + 1; i++)
-		cout << setw(16) << '(' << SMatrix.data[i].i << ' ' << SMatrix.data[i].j << ' ' << SMatrix.data[i].e << ')' << endl;
-}
 SMatrix_ NormalTransposeSMatrix(SMatrix_& SMatrix)
 {
 	SMatrix_ SMr;
@@ -98,8 +88,8 @@ SMatrix_ NormalTransposeSMatrix(SMatrix_& SMatrix)
 	SMr.col_num = SMatrix.row_num;
 	SMr.total_num = SMatrix.total_num;
 
-	//在原三元组顺序表中按列数递增挑出矩阵元素存入转置后矩阵的三元组顺序表�?
-	int p = 1;//计数�?
+	//在原三元组顺序表中按列数递增挑出矩阵元素存入转置后矩阵的三元组顺序表
+	int p = 1;
 	for (int colCount = 1; colCount < SMatrix.col_num + 1; colCount++)
 	{
 		for (int i = 1; i < SMatrix.total_num + 1; i++)
